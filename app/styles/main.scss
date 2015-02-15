@@ -1,5 +1,10 @@
-// bower:scss
-// endbower
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 
 body {
   background: #fafafa;
@@ -8,24 +13,69 @@ body {
 }
 
 .hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
   background-color: #eee;
   border-radius: 6px;
-  padding: 60px;
+  padding: 10px;
   h1 {
-    font-size: 60px;
+    text-align: center;    
+    font-size: 40px;
     line-height: 1;
     letter-spacing: -1px;
   }
 }
 
-.browsehappy {
-  margin: 0.2em 0;
+.sudoku-menu {
+  width: 50%;
+  text-align: center;
+  margin: 20px auto;
+
+  span {
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #1FA7E1;
+    @include border-radius(20px);
+
+  }
+
+  span:hover {
+    box-shadow: 0px 0px 3px black;
+
+  }
+}
+
+.sudoku-container {
+  border: 5px solid #666;
+  margin-left: auto;
+  margin-right: auto;
+
+  td {
+    margin: 0;
+  }
+
+  input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0;
+    border: 1px #ccc solid;
+    background: transparent;
+  }
+
+  .sudoku-input-error {
+    background: #ffc9d7;
+  }
+
+  &.valid-matrix {
+    border: 5px solid #1FA7E1;
+  }
+}
+
+.sudoku-section-one {
   background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
 }
