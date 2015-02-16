@@ -1,5 +1,5 @@
 # Soduko
-Soduko game written using javascript. See the [demo]() here.
+Soduko game written using javascript. See the [demo](http://vlt5.github.io/sudoku/dist/index.html) here.
 
 #### Summary
 1. Use [Singleton](http://addyosmani.com/resources/essentialjsdesignpatterns/book/) design pattern

@@ -9,7 +9,6 @@ var amdOptimize = require('gulp-amd-optimizer');
 var requireConfig = {
   baseUrl: 'bower_components',
   paths: {
-      require: 'requirejs/require',
       jquery: 'jquery/dist/jquery',
       sudoku: '../app/scripts/sudoku'
   }
@@ -17,7 +16,7 @@ var requireConfig = {
 var options = {
   umd: false
 };
- 
+
 gulp.task('scripts', function () {
   return gulp.src('app/scripts/*.js', {base: requireConfig.baseUrl})
     .pipe(amdOptimize(requireConfig, options))
