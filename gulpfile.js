@@ -1,8 +1,30 @@
 /* jshint node:true */
 'use strict';
-// generated on 2015-02-13 using generator-gulp-webapp 0.2.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var concat = require('gulp-concat');
+var amdOptimize = require('gulp-amd-optimizer');
+
+
+var requireConfig = {
+  baseUrl: 'bower_components',
+  paths: {
+      require: 'requirejs/require',
+      jquery: 'jquery/dist/jquery',
+      sudoku: '../app/scripts/sudoku'
+  }
+};
+var options = {
+  umd: false
+};
+ 
+gulp.task('scripts', function () {
+  return gulp.src('app/scripts/*.js', {base: requireConfig.baseUrl})
+    .pipe(amdOptimize(requireConfig, options))
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("dist/scripts"));
+});
+
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/main.scss')
@@ -114,7 +136,7 @@ gulp.task('watch', ['connect'], function () {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['html', 'images', 'fonts', 'extras', 'scripts'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
