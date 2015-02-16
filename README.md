@@ -19,10 +19,10 @@ Soduko game written using javascript. See the [demo](http://vlt5.github.io/sudok
 
 #### Todo
 There are some things sitting in my mind, will try to implement once I have additional time.  
-1. CSS animation
-2. Write a React version of this game
-3. Try `webpack` for bunding
-4. Write a `make` file to do all the setup in one command
+1. CSS animation  
+2. Write a React version of this game  
+3. Try `webpack` for bunding  
+4. Write a `make` file to do all the setup in one command  
 
 
 ##### Reference
